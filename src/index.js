@@ -4,6 +4,8 @@ import Router from "./router/router";
 import { Provider } from "mobx-react";
 import stores from "./store";
 import './axios/index'
+import './static/style/index.scss'
+
 ReactDOM.render(
   <Provider {...stores}>
     <Router />

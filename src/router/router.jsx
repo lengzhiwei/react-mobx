@@ -1,15 +1,14 @@
 import React, { Component, Fragment } from "react";
 import { HashRouter,Route } from "react-router-dom";
-import Home from '../page/home';
-import One from '../page/one';
-
+import Login from '../page/Login/index'
+import LonginWithPhone from '../page/loginWithPhone/index'
 class Router extends Component {
   render() {
     return (
       <HashRouter>
         <Fragment>
-          <Route exact path={`/`} component={Home} />
-          <Route path={`/one`} component={One} />
+          <Route exact  path={`/`} component={Login} />
+          <Route path={`/loginWithPhone`}  component={LonginWithPhone} />
         </Fragment>
       </HashRouter>
     );
