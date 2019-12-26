@@ -19,13 +19,12 @@ class Login extends Component {
   }
   async phoneLogin(){
     try {
-      await this.props.loginStore.loginWithPhone(null);
+      await this.props.loginStore.loginWithPhone()
     } catch (err){
       console.log(err)
     }
   }
   toLoginPhone = ()=>{
-    console.log('sss')
       this.props.history.push('/loginWithPhone')
   }
   render() {
@@ -42,6 +41,10 @@ class Login extends Component {
               立即体验
           </div>
         </div>
+        {/* <div className='userAgree'>
+          asds
+          <input type="radio" value={}/>
+        </div> */}
       </div>
     );
   }

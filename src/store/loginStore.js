@@ -1,9 +1,9 @@
 import { observable,action} from "mobx";
-import loginApi from '../api/login'
+import login from '../api/login'
 class loginStore {
-  @observable homeNum = 0;
-  @observable dNum = 0
-  @observable arr = [];
+  @observable phone = '';
+  @observable password = '';
+  @observable res = [];
   @action addNum() {
     this.homeNum += 1;
     this.arr.push(this.homeNum)
@@ -14,11 +14,20 @@ class loginStore {
   }
   @action.bound async loginWithPhone(params) {
     try{
-        const res = await loginApi.phoneLogin({phone:'18349692538',password:'leng598930'})
-        console.log(res)
+        const result = await login.phoneLogin({phone:params.phone,password:params.password})
+        console.log(result)
+        if(result.code === 400){
+        alert('请输入正确的数据')
+       } else {
+        return this.loginSuccess(result);
+       }
     } catch (err) {
+      alert('请输入正确的数据1')
         console.log(err)
     }
+  }
+  @action.bound loginSuccess(response){
+    this.res = response
   }
 }
 
