@@ -1,9 +1,14 @@
-import { observable,action} from "mobx";
+import {
+  observable,
+  action
+} from "mobx";
 import login from '../api/login'
 class loginStore {
   @observable phone = '';
   @observable password = '';
-  @observable res = [];
+  @observable loginRes = {};
+  @observable hotList = [];
+  @observable info = {}
   @action addNum() {
     this.homeNum += 1;
     this.arr.push(this.homeNum)
@@ -13,21 +18,42 @@ class loginStore {
     this.homeNum -= 1;
   }
   @action.bound async loginWithPhone(params) {
-    try{
-        const result = await login.phoneLogin({phone:params.phone,password:params.password})
-        console.log(result)
-        if(result.code === 400){
-        alert('请输入正确的数据')
-       } else {
-        return this.loginSuccess(result);
-       }
+    try {
+      const result = await login.phoneLogin({
+        phone: params.phone,
+        password: params.password
+      })
+      return this.loginSuccess(result);
     } catch (err) {
-      alert('请输入正确的数据1')
-        console.log(err)
+      return this.loginFail(err);
     }
   }
-  @action.bound loginSuccess(response){
-    this.res = response
+  @action.bound loginFail(err) {
+    this.loginRes = err
+    return Promise.reject(err);
+  }
+  @action.bound loginSuccess(response) {
+    this.loginRes = response
+    return Promise.resolve(response);
+  }
+  // @action.bound async getHotwallList() {
+  //   try {
+  //     const List = await login.hotwallList().then(res => {
+  //       return res
+  //     })
+  //     this.hotList = List
+  //   } catch {
+  //     console.log('-------err-----')
+  //     console.log('-------err-----')
+  //   }
+  // }
+  @action.bound async getUserInfo(){
+    try{
+      const info = await login.userDetails(this.loginRes.uid)
+      this.userInfo = info
+    } catch(err){
+
+    }
   }
 }
 

@@ -12,7 +12,20 @@ const phoneLogin = function (params) {
       method: 'get'
     })
   }
-
+  const hotwallList = function (params) {
+    return request({
+      url: `/comment/hotwall/list`,
+      method: 'get'
+    })
+  }
+  const userDetails = function (id) {
+    return request({
+      url: `/user/detail?uid=${id}`,
+      method: 'get'
+    })
+  }
 export default {
-    phoneLogin
+    phoneLogin,
+    hotwallList,
+    userDetails
 }

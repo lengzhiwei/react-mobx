@@ -15,7 +15,6 @@ class Login extends Component {
   }
   componentDidMount(){
     // this.phoneLogin()
-    console.log('sss')
   }
   async phoneLogin(){
     try {
