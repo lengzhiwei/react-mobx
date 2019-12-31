@@ -12,6 +12,13 @@ const getBanner = function (params) {
         method: 'get'
     })
 }
+const getPersonalized = function () {
+    return request({
+        url: `/personalized?limit=9`,
+        method: 'get'
+    })
+}
 export default {
-    getBanner
+    getBanner,
+    getPersonalized
 }

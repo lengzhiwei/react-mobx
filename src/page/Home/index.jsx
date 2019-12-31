@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { inject, observer, PropTypes as MobxPropTypes } from "mobx-react";
 import ReactRouterPropTypes from "react-router-prop-types";
-import { Tabs, WhiteSpace, Badge } from "antd-mobile";
+import { Tabs, WhiteSpace } from "antd-mobile";
 // import { StickyContainer, Sticky } from 'react-sticky';
 import Discover from "../Discover/index";
+
 import "./index.scss";
 @inject("loginStore")
 @observer
@@ -19,7 +20,7 @@ class Home extends Component {
       { title: "热门", sub: "3" }
     ];
     return (
-      <div>
+      <div className='homeContent'>
         <WhiteSpace />
         <Tabs
           tabs={tabs}

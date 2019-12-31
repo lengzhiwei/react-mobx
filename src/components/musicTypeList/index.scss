@@ -1,0 +1,17 @@
+@import '../../static/style/index.scss';
+.musicTypeBox{
+    display: flex;
+    .typeItem{
+        font-size: 12px;
+        display: inline-block;
+        width: 20%;
+        text-align: center;
+        // padding: 10px 14px;
+        margin: 10px 6px;
+        height: 32px;
+        line-height: 32px;
+        border-radius: 6px;
+        color: rgb(220, 220, 220);
+        background-color: $cloudRed;
+    }
+}

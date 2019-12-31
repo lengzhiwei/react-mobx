@@ -31,7 +31,7 @@ class LoginWithPhone extends Component {
     try {
       await this.props.loginStore.loginWithPhone(params);
       if(this.props.loginStore.loginRes.code === 200){
-          this.props.history.push('/hotList')
+          this.props.history.push('/home')
       } else {
         alert("密码或者账号错误");
         this.props.form.resetFields()

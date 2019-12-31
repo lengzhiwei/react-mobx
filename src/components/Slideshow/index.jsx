@@ -15,7 +15,7 @@ class Slideshow extends Component {
     await this.props.discover.getBannerList();
   }
   onChange = (a, b, c) => {
-    console.log(a, b, c);
+    // console.log(a, b, c);
   };
   render() {
     const { bannerList } = this.props.discover;

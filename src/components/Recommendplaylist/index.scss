@@ -1,0 +1,49 @@
+.recomdTitle{
+    display: flex;
+    justify-content: space-between;
+    .discoverTitle{
+        font-size:14px;
+        text-indent: 4px;
+        line-height: 30px;
+        color: #333333;
+
+    }
+    .discoverTitle{
+        margin-right: 6px;
+    }
+}
+
+.recomdListBox {
+    display: flex;
+    flex-wrap: wrap;
+
+    .recomdItem {
+        padding: 4px;
+        width: 33%;
+
+        // height: 150px;
+        .imgBack {
+            background-image: no-repeat;
+            overflow: hidden;
+            height: 120px;
+            width: 100%;
+            background-size: 100% 100%;
+
+            .playNum {
+                float: right;
+                font-size: 12px;
+                color: whitesmoke;
+            }
+
+        }
+
+        .listName {
+            font-size: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow : hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}
