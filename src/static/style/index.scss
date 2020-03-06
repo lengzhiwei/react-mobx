@@ -1,15 +1,8 @@
-@import './reset.scss';
-@import '~antd/dist/antd.css';
-@import '~antd-mobile/dist/antd-mobile.css';
-/* 处理 vm 适配图片不显示问题 */
-$cloudRed:#E60026;
-
-// img {
-//   content: normal !important;
-// }
-
-html,
-body,
-#root {
+$m-blue:#258CF3;
+#root{
+  font-family: "Microsoft YaHei";
   height: 100%;
+}
+.searchCar{
+  height: 50px;
 }

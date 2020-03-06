@@ -14,10 +14,15 @@ class index extends Component {
 
     async componentDidMount() {
         await this.props.discover.getRecommendplaylist();
+        setInterval(()=>{
+            this.props.discover.changeNowTime()
+        },1000)
       }
     render() {
         return (
             <div className='contentBox'>
+    <p>{this.props.discover.nowTime}</p>
+    <p>{this.props.discover.timeString}</p>
                 <Slideshow/>
                 <MusicType/>
                 <Recommendplaylist list={this.props.discover.recomdList}/>

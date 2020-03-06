@@ -1,12 +1,14 @@
 import {
     observable,
-    action
+    action,
+    computed
   } from "mobx";
   import discover from '../api/discover'
   class Discover {
     @observable searchText = '';
     @observable bannerList = [];
     @observable recomdList = []
+    @observable nowTime = '';
     @action.bound async getRecommendplaylist(){
       try{
         const res = await discover.getPersonalized();
@@ -14,6 +16,9 @@ import {
       } catch(error){
         return this.getplaylistFail(error)
       }
+    }
+    @action.bound changeNowTime(){
+      this.nowTime = new Date().toLocaleTimeString()
     }
     @action.bound getplaylistSuccess(response) {
       if(response && response.result.length > 0){
@@ -41,6 +46,9 @@ import {
         this.bannerList = response.banners
       }
       return Promise.resolve(response);
+    }
+    @computed get timeString() {
+      return this.nowTime + 'LENGZHIWEI'
     }
   }
 

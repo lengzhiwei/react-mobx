@@ -1,4 +1,13 @@
-.homeContent{
-    display: block;
-    height: 100%;
+@import "../../static/style/index";
+.content{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  //background: $m-blue;
+  .container{
+    //position: absolute;
+    //margin-left: 15% ;
+    //left: 15%;
+    //width: 1300px;
+  }
 }

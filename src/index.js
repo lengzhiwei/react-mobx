@@ -5,7 +5,7 @@ import { Provider } from "mobx-react";
 import stores from "./store";
 import './axios/index'
 import './static/style/index.scss'
-
+import 'antd/dist/antd.css';
 ReactDOM.render(
   <Provider {...stores}>
     <Router />

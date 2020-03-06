@@ -1,0 +1,46 @@
+const navList = [
+    {
+        name:'节假日+万年历',
+        useCount:10000,
+        introduce:'123123123123',
+        path:'car',
+        id:0
+    },{
+        name:'节假日+万年历',
+        useCount:10000,
+        introduce:'123123123123',
+        path:'/adas',
+        id:2
+    },{
+        name:'节假日+万年历',
+        useCount:10000,
+        introduce:'123123123123',
+        path:'/adas',
+        id:3
+    },{
+        name:'节假日+万年历',
+        useCount:10000,
+        introduce:'123123123123',
+        path:'/adas',
+        id:4
+    },{
+        name:'节假日+万年历',
+        useCount:10000,
+        introduce:'123123123123',
+        path:'/adas',
+        id:5
+    },{
+        name:'节假日+万年历',
+        useCount:10000,
+        introduce:'123123123123',
+        path:'/adas',
+        id:6
+    },{
+        name:'节假日+万年历',
+        useCount:10000,
+        introduce:'123123123123',
+        path:'/adas',
+        id:7
+    },
+]
+export { navList }

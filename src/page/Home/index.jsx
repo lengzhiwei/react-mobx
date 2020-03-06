@@ -1,75 +1,27 @@
-import React, { Component } from "react";
-import { inject, observer, PropTypes as MobxPropTypes } from "mobx-react";
-import ReactRouterPropTypes from "react-router-prop-types";
-import { Tabs, WhiteSpace } from "antd-mobile";
-// import { StickyContainer, Sticky } from 'react-sticky';
-import Discover from "../Discover/index";
+import React, { Component } from 'react';
+import MyHeader from './components/home/header'
+import FuncBody from './components/functionItem/index'
+import func from '../../api/func'
+import './index.scss'
+class index extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { inputValue: localStorage.getItem('inputValue') };
+    }
+    componentDidMount() {
+        func.getWeatherByName('成都市').then(res=>{
+            console.log(res)
+        })
+    }
 
-import "./index.scss";
-@inject("loginStore")
-@observer
-class Home extends Component {
-  static propTypes = {
-    loginStore: MobxPropTypes.observableObject.isRequired,
-    history: ReactRouterPropTypes.history.isRequired
-  };
-  render() {
-    const tabs = [
-      { title: "我的", sub: "1" },
-      { title: "发现", sub: "2" },
-      { title: "热门", sub: "3" }
-    ];
-    return (
-      <div className='homeContent'>
-        <WhiteSpace />
-        <Tabs
-          tabs={tabs}
-          initialPage={1}
-          onChange={(tab, index) => {
-            console.log("onChange", index, tab);
-          }}
-          onTabClick={(tab, index) => {
-            console.log("onTabClick", index, tab);
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "150px",
-              backgroundColor: "#fff"
-            }}
-          >
-            Content of first tab
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "150px",
-              backgroundColor: "#fff"
-            }}
-          >
-            <Discover />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "150px",
-              backgroundColor: "#fff"
-            }}
-          >
-            Content of third tab
-          </div>
-        </Tabs>
-
-        <WhiteSpace />
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className='content'>
+                <MyHeader></MyHeader>
+                <FuncBody></FuncBody>
+            </div>
+        );
+    }
 }
-export default Home;
+
+export default index;

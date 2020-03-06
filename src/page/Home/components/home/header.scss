@@ -1,0 +1,63 @@
+@import "../../../../static/style/index";
+.header{
+  height: 300px;
+  //background: aqua;
+  background-image: linear-gradient(180deg, #258cf3, #17a8ed);
+  .container {
+    width: 1300px;
+    margin: 0 auto;
+
+    .top-line {
+
+      line-height: 100px;
+      display: flex;
+      justify-content: space-between;
+
+      .logo-content {
+        margin-left: 20px;
+        cursor: pointer;
+
+        .logo {
+          border-radius: 10px;
+          width: 100px;
+        }
+
+        .logo:hover {
+          transform: scale(1.2);
+          transition: all 0.4s;
+        }
+      }
+
+      .nav {
+        display: flex;
+
+        .nav-item {
+          a {
+            height: 80px;
+            line-height: 80px;
+            display: block;
+            font-size: 16px;
+            color: white;
+            padding: 0 20px;
+          }
+        }
+      }
+    }
+    .total{
+      h1{
+        text-shadow: -5px 5px 0 rgba(0, 0, 0, .15);
+        font-size: 36px;
+        padding-top: 30px;
+        font-weight: 500;
+        color: white;
+      }
+      p{
+        text-shadow: -5px 5px 0 rgba(0, 0, 0, .15);
+        font-size: 20px;
+        padding-top: 15px;
+        font-weight: 400;
+        color: white;
+      }
+    }
+  }
+}

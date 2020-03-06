@@ -16,8 +16,8 @@ service.interceptors.request.use(
   function(config) {
     // 每次请求带上token和用户编号
     // if (store.getters.token) {
-    // config.headers['Token'] = getToken()
-    // config.headers['Authorization'] = store.getters.userId
+    config.headers['app_id'] = 'qvcj1lpyvmks7p0l'
+    config.headers['app_secret'] = 'dnVPMFgwZk5XUmRnZmJ5dkZoV1B6dz09'
     // }
     config.headers['Content-Type'] = 'application/json;charset=UTF-8'
     // 每次请求带上时间戳 防刷处理
