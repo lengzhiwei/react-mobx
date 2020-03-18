@@ -6,10 +6,10 @@ const navList = [
         path:'car',
         id:0
     },{
-        name:'节假日+万年历',
+        name:'城市天气查询',
         useCount:10000,
         introduce:'123123123123',
-        path:'/adas',
+        path:'/cityWeather',
         id:2
     },{
         name:'节假日+万年历',
